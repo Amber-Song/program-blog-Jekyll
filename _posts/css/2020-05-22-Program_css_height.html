@@ -1,0 +1,63 @@
+---
+category: "css"
+title: "[CSS] height:100% doesn't work!.html"
+---
+
+<div class="web-page">
+  {% include header-css.html %}
+
+  <h1>[CSS] height:100% doesn't work!</h1>
+
+  <div class="info">
+    I want to make the content take over the whole screen but it only set
+    the body element's height didn't work! Here is the demo: <br />
+    <br />
+    <iframe
+      height="265"
+      style="width: 100%;"
+      scrolling="no"
+      title="CSS_height_without_html_and_body_set_demo"
+      src="https://codepen.io/AmberSong/embed/gOMvKpW?height=265&theme-id=dark&default-tab=html,result"
+      frameborder="no"
+      loading="lazy"
+      allowtransparency="true"
+      allowfullscreen="true"
+    >
+      See the Pen
+      <a href="https://codepen.io/AmberSong/pen/gOMvKpW"
+        >CSS_height_without_html_and_body_set_demo</a
+      >
+      by JihongSong (<a href="https://codepen.io/AmberSong">@AmberSong</a>)
+      on <a href="https://codepen.io">CodePen</a>.
+    </iframe>
+  </div>
+
+  <div class="info">
+    As it is said online that if the height is set by percentage, the value
+    of the height depends on the height of the parent element. However, the
+    body and html elements, in this case, have no default value and their
+    heights depend on the total height of all the descendants' height which
+    means height:100% in the div will not take the whole screen. <br />
+    To solve this, you could also set the html and body to 100% or you could
+    set the height to 100vh. vh relative to 1% of the height of the
+    viewport. <br /><br />
+    <iframe
+      height="265"
+      style="width: 100%;"
+      scrolling="no"
+      title="CSS_height_with_html_and_body_set_demo"
+      src="https://codepen.io/AmberSong/embed/wvWyXKp?height=265&theme-id=dark&default-tab=html,result"
+      frameborder="no"
+      loading="lazy"
+      allowtransparency="true"
+      allowfullscreen="true"
+    >
+      See the Pen
+      <a href="https://codepen.io/AmberSong/pen/wvWyXKp"
+        >CSS_height_with_html_and_body_set_demo</a
+      >
+      by JihongSong (<a href="https://codepen.io/AmberSong">@AmberSong</a>)
+      on <a href="https://codepen.io">CodePen</a>.
+    </iframe>
+  </div>
+</div>

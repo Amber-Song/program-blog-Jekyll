@@ -1,0 +1,67 @@
+---
+category: "js"
+title: "[JS] get width and height in JS.html"
+---
+
+<div class="web-page">
+  {% include header-js.html %}
+
+  <h1>[JS] get width and height in JS</h1>
+
+  <div class="info">
+    There are several properties that you can get from js.
+    <ul>
+      <li>
+        window.innerwidth and innerheight return the content area of window.
+      </li>
+      <li>
+        window.outerwidth and outerheight return the whole browser window.
+      </li>
+      <li>
+        And for IE8 and earier, user clientwidth and clientheight as
+        innerwidth and innerheight.
+      </li>
+      <li>
+        Using <strong>style</strong> to get width and height is to get the
+        set width and height. The value for span tag will be none.
+      </li>
+      <li>
+        <strong>Element.clientWidth</strong> and
+        <strong>Element.clientHeight</strong> include padding but exclude
+        border, margin and scrollbars. It is zero for the inline element. It
+        is int.
+      </li>
+      <li>
+        <strong>HTMLElement.offsetWidth</strong> and
+        <strong>HTMLElement.offsetHeight</strong> include padding, border
+        and scrollbars, exclude margin. It is zero for the hidden element.
+      </li>
+      <li>
+        <strong>Element.scrollWidth</strong> and
+        <strong>Element.scrollHeight</strong> include padding but exclude
+        border, margin and scrollbars. It is the content height.
+      </li>
+    </ul>
+
+    Here is the demo:
+    <iframe
+      height="608"
+      style="width: 100%;"
+      scrolling="no"
+      title="JavaScript_width_demo"
+      src="https://codepen.io/AmberSong/embed/yLOrJoE?height=608&theme-id=dark&default-tab=js,result"
+      frameborder="no"
+      loading="lazy"
+      allowtransparency="true"
+      allowfullscreen="true"
+    >
+      See the Pen
+      <a href="https://codepen.io/AmberSong/pen/yLOrJoE"
+        >JavaScript_width_demo</a
+      >
+      by JihongSong (<a href="https://codepen.io/AmberSong">@AmberSong</a>)
+      on <a href="https://codepen.io">CodePen</a>.
+    </iframe>
+  </div>
+</div>
+

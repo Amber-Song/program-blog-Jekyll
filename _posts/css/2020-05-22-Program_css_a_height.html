@@ -1,0 +1,43 @@
+---
+category: "css"
+title: "[CSS] How to set height and width for tag a!.html"
+---
+
+<div class="web-page">
+  {% include header-css.html %}
+  
+  <h1>[CSS] How to set height and width for tag a!</h1>
+
+  <div class="info">
+    I tried to set the height and width for the tag a. But it didn't work,
+    the border still tightly wrapped the content. After I searched online, I
+    found that if an element displayed as an inline element, any height and
+    width properties would have no effect. So I set the display to block in
+    order to make the setting of height and width work. Here is the demo:
+    <br /><br />
+    <iframe
+      height="477"
+      style="width: 100%;"
+      scrolling="no"
+      title="CSS_height_width_of_inline_element_demo"
+      src="https://codepen.io/AmberSong/embed/XWKZBMp?height=477&theme-id=dark&default-tab=html,result"
+      frameborder="no"
+      loading="lazy"
+      allowtransparency="true"
+      allowfullscreen="true"
+    >
+      See the Pen
+      <a href="https://codepen.io/AmberSong/pen/XWKZBMp"
+        >CSS_height_width_of_inline_element_demo</a
+      >
+      by JihongSong (<a href="https://codepen.io/AmberSong">@AmberSong</a>)
+      on <a href="https://codepen.io">CodePen</a>.
+    </iframe>
+  </div>
+
+  <div class="info">
+    After I tried, I found that not only the height and width of inline
+    elements didn't work, Margin of that didn't work as well. And set the
+    display to block or inline-block do help.
+  </div>
+</div>

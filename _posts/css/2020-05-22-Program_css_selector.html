@@ -1,0 +1,112 @@
+---
+category: "css"
+title: "[CSS] id selector in external css file doesn't work! [Question mark].html"
+link: <link rel="stylesheet" href="Program_css_selector_demo.css" />
+---
+
+
+    <div class="web-page">
+      {% include header-css.html %}
+
+      <h1>
+        [CSS] id selector in external css file doesn't work! [Question mark]
+      </h1>
+
+      <div class="info">
+        I try to select the element and then apply the style on it in the
+        external CSS file. But when I selected it by its id, it doesn't work.
+        While I selected it by its class, it works. <br />
+        When I wrote this blog's demo, I found that if you just want to select
+        elements and change their style, both selecting by id and class works.
+        If you want to apply the style to the elements when your mouse hover
+        themselves, both selecting by id and class works. But if you want to
+        apply the style to the elements when your mouse hover other elements,
+        both of them doesn't work at all this time. If it doesn't work in the
+        external CSS file, it doesn't work in the internal CSS file as well.
+        There is no error. I still don't know why. <br />
+        Anyway here is the demo:
+
+        <iframe
+          height="520"
+          style="width: 100%;"
+          scrolling="no"
+          title="CSS_selector_demo_1"
+          src="https://codepen.io/AmberSong/embed/xxOqOdE?height=265&theme-id=dark&default-tab=html,result"
+          frameborder="no"
+          loading="lazy"
+          allowtransparency="true"
+          allowfullscreen="true"
+        >
+          See the Pen
+          <a href="https://codepen.io/AmberSong/pen/xxOqOdE"
+            >CSS_selector_demo_1</a
+          >
+          by JihongSong (<a href="https://codepen.io/AmberSong">@AmberSong</a>)
+          on <a href="https://codepen.io">CodePen</a>.
+        </iframe>
+      </div>
+
+      <div class="info">
+        I searched online and found some possibilities for why it doesn't work.
+        <ol>
+          <li>
+            If you add space before :hover, that element will not change the
+            style, but all of its descendant elements will change the style.
+          </li>
+          <li>
+            If you want to change the style of other elements when you hover one
+            element, the elements you can change is descendant elements and only
+            siblings following it. If you don't add + before sibling element, it
+            still doesn't work.
+          </li>
+          <li>
+            For the tag a, a:hover isn't placed after a:link and a:visited.
+          </li>
+        </ol>
+        And I think I found the reason that I didn't work for the above demo.
+        When hovering the second element, the last element's style doesn't
+        change, because only the sibling element directly following it will
+        change. when the third element hovered, the last one changes, because it
+        is directly following it. <br />
+        Here is some example:
+        <br />
+
+        <iframe
+          height="520"
+          style="width: 100%;"
+          scrolling="no"
+          title="CSS_selector_demo_2"
+          src="https://codepen.io/AmberSong/embed/ExyWyXy?height=265&theme-id=dark&default-tab=html,result"
+          frameborder="no"
+          loading="lazy"
+          allowtransparency="true"
+          allowfullscreen="true"
+        >
+          See the Pen
+          <a href="https://codepen.io/AmberSong/pen/ExyWyXy"
+            >CSS_selector_demo_2</a
+          >
+          by JihongSong (<a href="https://codepen.io/AmberSong">@AmberSong</a>)
+          on <a href="https://codepen.io">CodePen</a>.
+        </iframe>
+
+        <iframe
+          height="520"
+          style="width: 100%;"
+          scrolling="no"
+          title="CSS_selector_demo_3"
+          src="https://codepen.io/AmberSong/embed/OJXpXgo?height=265&theme-id=dark&default-tab=html,result"
+          frameborder="no"
+          loading="lazy"
+          allowtransparency="true"
+          allowfullscreen="true"
+        >
+          See the Pen
+          <a href="https://codepen.io/AmberSong/pen/OJXpXgo"
+            >CSS_selector_demo_3</a
+          >
+          by JihongSong (<a href="https://codepen.io/AmberSong">@AmberSong</a>)
+          on <a href="https://codepen.io">CodePen</a>.
+        </iframe>
+      </div>
+    </div>

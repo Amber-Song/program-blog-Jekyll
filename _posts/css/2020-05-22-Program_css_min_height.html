@@ -1,0 +1,45 @@
+---
+category: "css"
+title: "[CSS] height or min-height?.html"
+---
+
+<div class="web-page">
+  {% include header-css.html %}
+  
+  <h1>[CSS] height or min-height?</h1>
+
+  <div class="info">
+    There was one time I used the grid in CSS. As there was one sentence too
+    long for just one line, it wrapped to another line. The problem is the
+    rest of the content just crashed into each other. I didn't notice I set
+    the height a fixed value at that time. <br />
+    Here is the demo: <br /><br />
+
+    <iframe
+      height="320"
+      style="width: 100%;"
+      scrolling="no"
+      title="CSS_height_in_grid_demo"
+      src="https://codepen.io/AmberSong/embed/zYBRaqg?height=265&theme-id=dark&default-tab=html,result"
+      frameborder="no"
+      loading="lazy"
+      allowtransparency="true"
+      allowfullscreen="true"
+    >
+      See the Pen
+      <a href="https://codepen.io/AmberSong/pen/zYBRaqg"
+        >CSS_height_in_grid_demo</a
+      >
+      by JihongSong (<a href="https://codepen.io/AmberSong">@AmberSong</a>)
+      on <a href="https://codepen.io">CodePen</a>.
+    </iframe>
+  </div>
+
+  <div class="info">
+    By setting min-height rather than height, I solved this problem. And I
+    wonder when to use height and when to use min-height. <br />
+    when you want the height of the element is fixed not affected by the
+    content inside the element, use height. overflow: scroll could go
+    together with height to show the whole element.
+  </div>
+</div>

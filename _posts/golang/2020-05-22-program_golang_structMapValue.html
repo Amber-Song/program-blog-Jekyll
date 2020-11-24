@@ -1,0 +1,48 @@
+---
+category: "golang"
+title: "[Golang] value in map in the struct can't be changed!.html"
+---
+
+<div class="web-page">
+  {% include header-golang.html %}
+  
+  <h1>[Golang] value in map in the struct can't be changed!</h1>
+
+  <div class="info">
+    There was a situation that I wanted to change the value in the map in
+    the struct. But I got an error <br />
+    <br />
+    <strong
+      >./prog.go:20:19: cannot assign to struct field pointers["a"].x in
+      map</strong
+    >
+    <br /><br />
+    It is line 20 in demo. I tried to search online. There are some answers
+    to this question.
+    <ul>
+      <li>
+        You are storing a struct by value which means that accession of that
+        struct in the map gives you a copy of the value. This is why when
+        you modify it, the struct in the map remains unmutated until you
+        overwrite it with the new copy.
+      </li>
+      <br />
+      <li>
+        For the safety during parallelism. When you are adding elements to a
+        hash, the language often has to copy all the values to a new
+        (bigger) hash table in the background. If elements can be directly
+        modified in memory, it will be impossible to keep all the copies in
+        sync.
+      </li>
+    </ul>
+    But I am still not sure about the second one. I tried in demo (line 26 -
+    30) by just changing the value in map. It works well.
+    <br />
+    Here is the demo: <br /><br />
+    <iframe
+      src="https://play.golang.org/p/t2zjEeHYYjx"
+      width="90%"
+      height="520px"
+    ></iframe>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+---
+category: "react"
+title: "[React] access DOM in reactjs.html"
+---
+
+<div class="web-page">
+  {% include header-react.html %}
+
+  <h1>[React] access DOM in reactjs</h1>
+
+  <div class="info">
+    When I just switched from vanilla js to reactjs, I felt very it very
+    different when I wanted to do something which needs access to DOM.
+    <br />
+    Like when I want to change the class of one element to another class, I
+    used to write:
+    <code>
+      document.getElementById('bid').className = 'show-more';
+    </code>
+    <br />
+    But in reactjs I can't get the node by getElementById function or
+    anything like that. In reactjs, it need to use another way to achieve
+    this by making the class or inner HTML or anything I want to change the
+    state. Instead of picking the node and change it, I make it variable
+    inside state and when I want to change it, I change the value of the
+    variable.<br />
+    <br />
+    I also saw there is another way, using the useRef hook. But I haven't
+    explored that one. I will add more once I get more information about
+    that.
+  </div>
+</div>

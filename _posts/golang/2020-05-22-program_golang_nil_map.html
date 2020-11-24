@@ -1,0 +1,42 @@
+---
+category: "golang"
+title: "[Golang] nil map cause panic.html"
+---
+
+<div class="web-page">
+  {% include header-golang.html %}
+
+  <h1>[Golang] nil map cause panic</h1>
+
+  <div class="info">
+    When creating a new map variable, it is very easy to declare the map and
+    forget to initiate the map which will cause a panic. <br />
+    <strong> panic: assignment to entry in nil map </strong><br />
+    That is what I did. I used line 8 instead of line 9 to declare and
+    didn't initiate. <br />
+    <br />
+    So to solve this problem, I could either
+    <ul>
+      <li>declare and initiate at the same time, like line 9,</li>
+      <li>
+        or declare and initiate at different time, like line 15 and 16.
+      </li>
+    </ul>
+    And also when you assign data to an array or a map or struct, you have
+    to add what type it is in front of {} , like line 10 and 16. Or you will
+    get a panic: <br />
+    <strong>
+      ./prog.go:10:18: syntax error: unexpected {, expecting expression
+      <br />
+      ./prog.go:11:2: syntax error: non-declaration statement outside
+      function body </strong
+    ><br />
+    <br />
+    Here is the demo: <br /><br />
+    <iframe
+      src="https://play.golang.org/p/PgT5psQL2aS"
+      width="90%"
+      height="520px"
+    ></iframe>
+  </div>
+</div>

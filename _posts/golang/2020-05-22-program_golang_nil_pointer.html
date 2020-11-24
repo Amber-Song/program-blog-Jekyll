@@ -1,0 +1,50 @@
+---
+category: "golang"
+title: "[Golang] nil pointer cause panic.html"
+---
+
+<div class="web-page">
+  {% include header-golang.html %}
+
+  <h1>[Golang] nil pointer cause panic</h1>
+
+  <div class="info">
+    When creating a pointer point to the struct, it is very easy to forget
+    to assign the memory to that pointer. I made a mistake before. In line
+    19, I just write <br /><strong>var pointer1 *pointer</strong> <br />
+    instead of var pointer1 *pointer = new(pointer). So I got a panic <br />
+    <strong>
+      panic: runtime error: invalid memory address or nil pointer
+      dereference</strong
+    >
+    <br />
+    That is because when creating a pointer variable, it didn't assign the
+    memory to that variable the pointer point to. So when the pointer tries
+    to access the memory and get the value or tries to change the value, it
+    will get panic. <br /><br />
+    Here is the demo:<br /><br />
+
+    <iframe
+      src="https://play.golang.org/p/A0tXqeR_-CV"
+      width="90%"
+      height="420px"
+    ></iframe>
+  </div>
+
+  <div class="info">
+    So as the array. If the array was declared but wasn't initiated, when it
+    is accessed, the program will panic. I got a panic for this reason.
+    <br />
+    <strong
+      >panic: runtime error: index out of range [0] with length 0</strong
+    >
+    <br />
+    Here is the code. <br /><br />
+
+    <iframe
+      src="https://play.golang.org/p/gVsrEWrhvd8"
+      width="90%"
+      height="420px"
+    ></iframe>
+  </div>
+</div>

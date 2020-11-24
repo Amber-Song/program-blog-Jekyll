@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="web-page">
+  {% include header-js.html %}
+  <br>
+
+  <p class="title">Amber$ ls</p>
+  <p class="title">
+    {% assign posts = site.posts | where: "category", "js" %}
+    {% for post in posts %}
+      <a href="{{ post.url }}" class="codestyle"> 
+        {{ post.title }}
+      </a>
+      <br />
+    {% endfor %}
+  </p>
+
+</div>

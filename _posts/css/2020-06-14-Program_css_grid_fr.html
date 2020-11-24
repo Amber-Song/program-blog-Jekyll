@@ -1,0 +1,42 @@
+---
+category: "css"
+title: "[CSS] Using fr instead of percentage in grid.html"
+---
+
+<div class="web-page">
+  {% include header-css.html %}
+
+  <h1>[CSS] Using fr instead of percentage in grid</h1>
+
+  <div class="info">
+    fr is a quite recent feature add in grid. Before this one came out, I
+    sometimes use grid-template-columns: repeat(2, 50%); or
+    grid-template-columns: 50px 50% 30% 20%; to devide the columns, but it
+    didn't come out as I thought when I have grid-gap as part of the style.
+    Because for repeat(2, 50%) when the percentage is used, it works in a
+    way that 100% width is divided into two columns each of which is 50%, so
+    when grid-gap is added, the actual width is more than 100%. You can tell
+    from the result of grid-template-columns: 50px 50% 30% 20%; . But when
+    fr is used, the width excluding the gap will be divided based on the
+    ratio. <br />
+    Here is the demo: <br /><br />
+    <iframe
+      height="400"
+      style="width: 100%;"
+      scrolling="no"
+      title="CSS_grid_fr_demo"
+      src="https://codepen.io/AmberSong/embed/gOMvjxq?height=265&theme-id=dark&default-tab=html,result"
+      frameborder="no"
+      loading="lazy"
+      allowtransparency="true"
+      allowfullscreen="true"
+    >
+      See the Pen
+      <a href="https://codepen.io/AmberSong/pen/gOMvjxq"
+        >CSS_grid_fr_demo</a
+      >
+      by JihongSong (<a href="https://codepen.io/AmberSong">@AmberSong</a>)
+      on <a href="https://codepen.io">CodePen</a>.
+    </iframe>
+  </div>
+</div>

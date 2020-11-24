@@ -1,0 +1,38 @@
+---
+category: "css"
+title: "[CSS] Sometime it doesn't work if you just use .classname.html"
+---
+
+<div class="web-page">
+  {% include header-css.html %}
+
+  <h1>[CSS] Sometime it doesn't work if you just use .classname</h1>
+
+  <div class="info">
+    There was one time that I tried to change the style when the screen size
+    is changed, using @media, but it didn't work. Because when I wrote
+    .classname to match the class name and changed the style, sometimes it
+    just didn't match. So that could be solved by adding the tag name, like
+    div.classname. <br />
+    Here is the demo:
+
+    <iframe
+      height="450"
+      style="width: 100%;"
+      scrolling="no"
+      title="CSS_classname_match_demo"
+      src="https://codepen.io/AmberSong/embed/XWKMKeX?height=265&theme-id=dark&default-tab=css,result"
+      frameborder="no"
+      loading="lazy"
+      allowtransparency="true"
+      allowfullscreen="true"
+    >
+      See the Pen
+      <a href="https://codepen.io/AmberSong/pen/XWKMKeX"
+        >CSS_classname_match_demo</a
+      >
+      by JihongSong (<a href="https://codepen.io/AmberSong">@AmberSong</a>)
+      on <a href="https://codepen.io">CodePen</a>.
+    </iframe>
+  </div>
+</div>

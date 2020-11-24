@@ -1,0 +1,38 @@
+---
+category: "react"
+title: "[React] why using const keyword in reactjs.html"
+---
+
+<div class="web-page">
+  {% include header-react.html %}
+
+  <h1>
+    [React] why using const keyword in reactjs
+  </h1>
+
+  <div class="info">
+    In vanilla js,
+    <ul>
+      <li>
+        variable with <em>const</em> keyword can not be reassigned and it is
+        block-scoped
+      </li>
+      <li>
+        variable with <em>let</em> keyword is reassigned and it is
+        block-scoped
+      </li>
+      <li>
+        variable with <em>var</em> keyword is also reassigned but it is
+        function-scoped
+      </li>
+    </ul>
+    That is why in vanilla js, we usually use the let keyword. So I was
+    confused why in all the tutorial, they wrote variables with const
+    keyword in useState hook even when I was pretty sure that those
+    variables would change in the following commend. Then I found that when
+    properties or states change, the component will be rerendered. And the
+    function will be executed again which will cause it to create a new
+    scope again. Then, the variable with const will be assigned a new value
+    instead of reassigning values.
+  </div>
+</div>

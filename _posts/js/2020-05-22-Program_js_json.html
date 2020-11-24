@@ -1,0 +1,67 @@
+---
+category: "js"
+title: "[JS] JSON nested array and object.html"
+---
+
+<div class="web-page">
+  {% include header-js.html %}
+
+  <h1>[JS] JSON nested array and object</h1>
+
+  <div class="info">
+    To create a JSON file for my food blog, there is something I want it to
+    include:
+    <ul>
+      <li>Save all the restaurants from one city or town in a file.</li>
+      <li>
+        Inside the city or town, there will be one or more restaurants.
+      </li>
+      <li>Inside the restaurant, there will be one or more dish.</li>
+      <li>
+        Inside the dish, there will be some information about the dish, like
+        the name, price, etc.
+      </li>
+    </ul>
+    So the city or town name, restaurant and dish will be either object or
+    array. <br />
+    At first, I chose the place variable to become an object, restaurant to
+    become an array, the dish information to become an object. I thought I
+    could loop the restaurant name inside the city or town name, then get
+    the index in the object, loop through that or the restaurant name to get
+    dish information. Here is the code for array and how I accessed data:
+
+    <iframe
+      height="634"
+      style="width: 100%;"
+      scrolling="no"
+      title="JavaScript_json_demo"
+      src="https://codepen.io/AmberSong/embed/XWdQxvq?height=634&theme-id=dark&default-tab=js,result"
+      frameborder="no"
+      loading="lazy"
+      allowtransparency="true"
+      allowfullscreen="true"
+    >
+      See the Pen
+      <a href="https://codepen.io/AmberSong/pen/XWdQxvq"
+        >JavaScript_json_demo</a
+      >
+      by JihongSong (<a href="https://codepen.io/AmberSong">@AmberSong</a>)
+      on <a href="https://codepen.io">CodePen</a>.
+    </iframe>
+  </div>
+
+  <div class="info">
+    It turned out that it doesn't work. There is no error in the console,
+    but all the data inside the restaurant I try to access is undefined.
+    Because I looped through the restaurant in the Dunedin restaurants and
+    successfully got the name or to say the key instead of the key-value
+    pair. I can't access the value or to say the dish information just by
+    looping through the key. I should change <br />
+    the line for (dishId in restaurant) { <br />
+    to for (dishId in dudRestaurant[restaurant]) { <br />
+    There is another way to access the value by doing for (dishId in
+    dudRestaurant.restaurant), but as dudRestaurant.restaurant is equal to
+    dudRestaurant["restaurant"], in this case, the restaurant is not a key
+    name, it showed nothing.
+  </div>
+</div>

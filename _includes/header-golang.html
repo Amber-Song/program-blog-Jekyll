@@ -1,0 +1,8 @@
+<header class="title">
+  {% if page.title %}
+    Amber$ vim {% include link-main.html %}/ {% include link-golang.html %} / {{page.title}}
+  {% else %}
+    Amber$ pwd <br/>
+    {% include link-main.html %}/ {% include link-golang.html %}
+  {% endif %}
+</header>

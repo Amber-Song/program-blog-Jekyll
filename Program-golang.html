@@ -8,8 +8,7 @@ layout: default
 
   <p class="title">Amber$ ls</p>
   <p class="title">
-    {% assign posts = site.posts | where: "category", "golang" %}
-    {% for post in posts %}
+    {% for post in site.categories.golang %}
       <a href="{{ post.url }}" class="codestyle"> 
         {{ post.title }}
       </a>

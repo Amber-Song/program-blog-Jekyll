@@ -8,8 +8,7 @@ layout: default
 
   <p class="title">amber$ ls</p>
   <p class="title">
-    {% assign posts = site.posts | where: "category", "vue" %}
-    {% for post in posts %}
+    {% for post in site.categories.vue %}
       <a href="{{ post.url }}" class="codestyle"> 
         {{ post.title }}
       </a>

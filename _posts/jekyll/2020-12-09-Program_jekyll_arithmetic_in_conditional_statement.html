@@ -1,0 +1,50 @@
+---
+title: "[Jekyll] arithmetic in conditional expression doesnt work.html"
+categories:
+  - jekyll
+---
+
+<div class="web-page">
+  {% include header-jekyll.html %}
+  
+  <h1>[Jekyll] arithmetic in conditional expression doesnt work</h1>
+
+  <div class="info">
+    When I write in Jekyll, I want something like every second element using one piece of code 
+    and the others using other piece of code. So I wrote something like: 
+
+    <pre>
+      <code>
+    &lbrace;% if loopindex % 2 == 0 %}
+      // do something
+    &lbrace;% else %}
+      // do something
+    &lbrace;% endif %}
+      </code>
+    </pre>
+    
+    But it doesn't work. After I search online, I realised that 
+
+    <ul>
+      <li>First thing first, this is not liquid syntax. Liquid uses maths filter for arithmetic instead of maths symbol.</li>
+
+      <li>Filter can't be used in liquid if expression as pipes are not allowed in such a control structure.
+        And this will finally resolve to <code>&lbrace;% if loopindex %}</code>  which is always true.
+        To solve this problem, I have to assign the calculation to a variable then use it in if expression.</li>
+    </ul>
+
+    So the code should be like this.
+
+    <pre>
+      <code>
+    &lbrace;% assign i = loopindex | modulo: 2 %}
+    &lbrace;% if i == 0 %}
+      // do something
+    &lbrace;% else %}
+      // do something
+    &lbrace;% endif %}
+      </code>
+    </pre>
+
+  </div>
+</div>

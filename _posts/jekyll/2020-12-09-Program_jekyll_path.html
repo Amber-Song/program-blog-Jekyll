@@ -1,0 +1,78 @@
+---
+title: "[Jekyll] path.html"
+categories:
+  - jekyll
+---
+
+<div class="web-page">
+  {% include header-jekyll.html %}
+  
+  <h1>[Jekyll] path</h1>
+
+  <div class="info">
+    After months of development, I got used to using the relative path. But it doesn't work well in Jekyll. <br>
+    <br>
+
+    <ul>
+      <li>
+        The first problem I came across was I tried to put an image in [Golang] get data out of struct blog. 
+        It didn't throw any errors but the image can't be found. My code is like this, <br>
+        <code>&lt;img src="../../assets/call_element_out_of_struct.png" width="300px" /></code>
+      </li>
+
+      <li>
+        Then I wanted to display all the blogs in Golang folder which is a sub-folder of _posts folder. 
+        I know that to show all the posts, it could be easily done by site.posts. As Golang folder is a sub-folder, 
+        I thought I could do this by site.posts.Golang. Still it didn't throw any errors, but nothing showed on the page.
+        My code is like this, <code>&lbrace;% for post in site.posts.golang %}</code>
+      </li>
+    </ul>
+
+    After exploring, I found that Jekyll will rearrange the folder structure while building the whole website. 
+    That's why the relative path I used for images or links doesn't work. The folder assets will be still in the root folder, 
+    so it is better to use the absolute path for the stuff saved in assets. <br> <br>
+    
+    For the posts, I found how the file structure looks like from inspecting the html file. 
+    The post lives in /sub-folder-name/year/month/date, shown in the image below. <br> <br>
+
+    <img src="/assets/folder_structure_after_compil.png" alt="folder structure" style="width: 90%;"> <br> <br>
+
+    Apparently, Jekyll could detect all the html file naming correctly (using the format specified in Jekyll documentation) 
+    but it can't detect the folder itself. That's why I got the second problem. To solve the second question, I found there are two ways:
+
+    <ul>
+      <li>
+        Add data in each Jekyll html file and use the where filter to get the list of the posts which meet the request. <br>
+        <pre>
+          <code>
+  In post file:
+  ---
+  category: golang
+  ---
+
+  In post list:
+  &lbrace;% assign golang = site.posts | where: "category", "golang" %}
+  &lbrace;% for post in golang %}
+          </code>
+        </pre>
+      </li>
+
+      <li>
+        Jekyll can actually detect categories and group by categories. <br>
+        <pre>
+          <code>
+  In post file:
+  ---
+  categories:
+    - golang
+  ---
+
+  In post list:
+  &lbrace;% for post in site.categories.golang %}
+
+          </code>
+        </pre>
+      </li>
+    </ul>
+  </div>
+</div>
